@@ -56,14 +56,19 @@
 <br>
 <br>
 <br>
+
+<!-- This is the gray color area -->
 <section id="contact-form" style="height:85vh">
 	<div class="container">
 
   <div class="title">
     <h2>Try our product</h2>
+    <p>
+      Enter a product name as the prompt and the model will generate a positive and a negative review for you!
+    </p>
   </div>
 
-          
+<!-- FORM -->        
   <div class="container">
   <form action="{{url_for('generate_text')}}" method="POST">
       <div class="row">
@@ -76,28 +81,50 @@
       </div>
 
       <br>
-
-      <textarea class="form-control" rows="3" placeholder="Result will show up here...">{{generated|safe}}</textarea>
-
+<!-------  RESULTS  ------->
+    <div class="row">
+      <div class="col-sm-6">
+        <h3>
+      Positive Review
+    </h3>
+        <!-- Positive Reviews -->
+        <textarea class="form-control" rows="3" placeholder="Pos Reviews">{{generated_pos|safe}}</textarea>
+      </div>
+      
+      
+      <div class="col-sm-6">
+        <h3>
+      Negative Review
+    </h3>
+        <!-- Negative Reviews -->
+        <textarea class="form-control" rows="3" placeholder="Neg Reviews">{{generated_neg|safe}}</textarea>
+      </div>
+    </div>
+      
   </form>
   </div>
+<!-- FORM END -->       
+    
     
   </div>
 </section>
+    
+<!-- This is the gray color area END -->
 <br>
     
-		<footer>
-			<div class="container">
-				<div class="row">
-					<div class="col-md-12">
-						<div class="block">
-              <a href="#"><img src="https://img.shields.io/badge/Github-Visit%20our%20repo-green?logo=github" alt=""></a>
-							<p>All rights reserved © 2022</p>
-						</div>
-					</div>
-				</div>
-			</div>
-		</footer>
+    
+<footer>
+  <div class="container">
+    <div class="row">
+      <div class="col-md-12">
+        <div class="block">
+          <a href="https://github.com/Siqi-Fang/SC22-BatchA-The-Stars-Amazon-Review_Generator"><img src="https://img.shields.io/badge/Github-Visit%20our%20repo-green?logo=github" alt=""></a>
+          <p>All rights reserved © 2022</p>
+        </div>
+      </div>
+    </div>
+  </div>
+</footer>
 
 
 		<!-- load Js -->

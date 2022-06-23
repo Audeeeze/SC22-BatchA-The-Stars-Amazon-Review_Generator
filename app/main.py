@@ -21,8 +21,8 @@ from utils import get_base_url
 from aitextgen import aitextgen
 
 # load up a model from memory. Note you may not need all of these options.
-ai = aitextgen(model_folder="model/", to_gpu=False) # don't need to load tokenizder b/c we didn't train one
-
+ai_neg = aitextgen(model_folder="model/neg_model/", to_gpu=False) # don't need to load tokenizder b/c we didn't train one
+ai_pos = aitextgen(model_folder="model/pos_model/", to_gpu=False)
 
 # setup the webserver
 # port may need to be changed if there are multiple flask servers running on same server
@@ -55,9 +55,9 @@ def home_post():
 def results():
     if 'data' in session:
         data = session['data']
-        return render_template('product.html', generated=data)
+        return render_template('product.html', generated_neg=data[0], generated_pos=data[1])
     else:
-        return render_template('product.html', generated=None)
+        return render_template('product.html', generated_neg=None, generated_pos=None)
 
 # where the text generation happens
 @app.route(f'{base_url}/generate_text/', methods=["POST"])
@@ -68,24 +68,31 @@ def generate_text():
 
     prompt = request.form['prompt'] # grabs result 
     if prompt is not None:
-        generated = ai.generate(
+        generated_neg = ai_neg.generate(
             n=1,
             batch_size=3,
             prompt=str(prompt),
             max_length=340,
-            temperature=0.9,
+            temperature=1.0,
+            top_p=0.9,
             return_as_list=True
         )
 
-    data = {'generated_ls': generated}
-    session['data'] = generated[0]
+        generated_pos = ai_pos.generate(
+            n=1,
+            batch_size=3,
+            prompt=str(prompt),
+            max_length=340,
+            temperature=1.0,
+            top_p=0.9,
+            return_as_list=True
+        )
+    
+    data = {'generated_ls': generated_neg}
+    session['data'] = [generated_neg[0], generated_pos[0]] # returns 2 variables back to the results page
+    
     return redirect(url_for('results'))
 
-# prompt = request.form['prompt']
-# prompt_bold = '<h1>' + prompt +'</h1>' 
-# prompt_upper =  prompt.upper()
-# prompt_span = '<span style="color:red">' + prompt_upper + '</span>'
-# return render_template('product.html',red=prompt_span)
 
 if __name__ == '__main__':
     # IMPORTANT: change url to the site where you are editing this file.

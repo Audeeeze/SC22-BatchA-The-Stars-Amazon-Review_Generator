@@ -1,9 +1,11 @@
 <!DOCTYPE html>
 <!-- TODO:
-Add team members info&pictures(upload to app/static/img, should be roughly 1:1 ratio)
+- Add team members info&pictures(upload to app/static/img, should be roughly 1:1 ratio)
+- Maybe some instruction on the product page 
 -->
 	<html lang="en">
 	<head>
+    <title>Amazon Review Generator - Home</title>
 		<meta charset="UTF-8">
 		<meta name="viewport" content="width=device-width, initial-scale=1">
 		<!-- google fonts -->
@@ -64,7 +66,7 @@ Add team members info&pictures(upload to app/static/img, should be roughly 1:1 r
 
 <!-- Banner:  Go to product Button  -->
 <div class="wrapper">
-		<section id="banner">
+		<section id="banner" style="background: url({{url_for('static',filename='img/amazon_banner.jpg')}})">
 			<div class="container">
 				<div class="row">
 					<div class="col-md-12">
@@ -109,7 +111,7 @@ Add team members info&pictures(upload to app/static/img, should be roughly 1:1 r
 								<i class="ion-paintbucket"></i>
 							</div>
 							<h4 style="color:#6B6B6A" class="wow fadeInUp" data-wow-delay=".3s">Company Starts</h4>
-							<p class="wow fadeInUp" data-wow-delay=".5s">Companies can use it to write their own reviews for a starting product</p>
+							<p class="wow fadeInUp" data-wow-delay=".5s">Companies can use it to write their own reviews for a starting product.</p>
 						</div>
 					</div>
 					<div class="col-md-4 col-xs-6 col-sm-6">
@@ -162,7 +164,7 @@ Add team members info&pictures(upload to app/static/img, should be roughly 1:1 r
 							<p class="count-text">
 								<span class="counter-digit">NLP</span>
 							</p>
-							<p>The ability to build and help an AI understand human language, in both the spoken and written forms</p>
+							<p>Natural Language Processing: The ability to build and help an AI understand human language, in both the spoken and written forms.</p>
 						</div>
 					</div>
 				</div>
@@ -190,7 +192,7 @@ Add team members info&pictures(upload to app/static/img, should be roughly 1:1 r
                 <br>
                 <br>
 						    <a href="#"><h4 style="color:white" class="media-heading">Step 1: Finding a Dataset and Preprocessing it</h4></a>
-						    <p>Our main dataset is the 2018 Electronics reviews from Kaggle. We preprocessed it by cleaning it (removing stop-words) and saved the cleaned version of the data. The data is about 9,000 reviews from ⤻Amazon in 2018. We also have supplementary reviews that we webscraped. </p>
+						    <p>Our main dataset is the 2018 Electronics reviews from Kaggle, which contains reviews about electronics from Amazon from 2018 and earlier. The data is about 9,000 reviews from ⤻Amazon in 2018. We also have supplementary reviews that we webscraped for the positive and negative models (our extension idea). The positive model was trained on 7000+ reviews while the negative one was trained on 5800+. We preprocessed them by cleaning them and saved the cleaned version of the data to train our models.</p>
 						  </div>
             </div>
 					</div>
@@ -203,7 +205,7 @@ Add team members info&pictures(upload to app/static/img, should be roughly 1:1 r
                 <br>
                 <br>
 						    <a href="#"><h4 style="color:white" class="media-heading">Step 2: Training the Model</h4></a>
-						    <p>After importing our cleaned dataset of reviews on amazon electronics, we adjusted it to work on our model and ran the training. We experimented with the hyperparameters by recording reviews and comparing which ones with the different parameters made the most sense. </p>
+						    <p>After importing our cleaned dataset of reviews on Amazon electronics, we adjusted it to work on our model and ran the training. We didn't work with the positive or negative data yet because we needed to make sure our model would work. We experimented with the hyperparameters by recording reviews and comparing which ones with the different parameters made the most sense. Once we had chosen our models with the right hyperparameters, it was time to begin on our extension idea. </p>
 						  </div>
 						</div>
 					</div>
@@ -216,7 +218,7 @@ Add team members info&pictures(upload to app/static/img, should be roughly 1:1 r
                 <br>
                 <br>
 						    <h4 style="color:white" class="media-heading">Step 3: Extending the Idea and Sentiment Analysis</h4>
-						    <p> Using our initial dataset, we ran sentiment analysis on the data and retrained the models to make our final product take in the prompt, and return two separate reviews: one positive and one negative.
+						    <p> Using our initial dataset, we ran sentiment analysis on the data and came up with two separate datasets, one for positive reviews and one for negative reviews. We trained two models with each of the datasets to make our final product take in the prompt, and return two separate reviews: one positive and one negative.
   </p>
 						  </div>
             </div>
@@ -230,7 +232,7 @@ Add team members info&pictures(upload to app/static/img, should be roughly 1:1 r
                 <br>
                 <br>
 						    <a href="#" ><h4 style="color:white" class="media-heading">Step 4: Making the Website</h4></a>
-						    <p>After everything was done, we had to work on showcasing it. We worked together on the website, the front end engineers working on the layout and content of what you actually see, and the backend engineers connecting everything together. </p>
+						    <p>After everything was done, we had to work on showcasing it. We worked together on the website, the front end engineers working on the layout and content of what you actually see, and the back end engineers connecting the model to the actual website, allowing us to actually try it out! </p>
 						  </div>
             </div>
 					</div>
@@ -245,7 +247,7 @@ Add team members info&pictures(upload to app/static/img, should be roughly 1:1 r
 				<div class="row">
 					<div class="col-md-12">
 						<div class="title">
-							<h2 style="color:grey">Difficulties</h2>
+							<h2>Difficulties</h2>
 							<p>Use your mouse to drag to the right to see more!</p>
 						</div>
 						<div id="blog-post" class="owl-carousel">
@@ -265,9 +267,9 @@ Add team members info&pictures(upload to app/static/img, should be roughly 1:1 r
 								<div class="block">
 									<img src="img/blog/blog-2.jpg" alt="" class="img-responsive">
 									<div class="content">
-										<h4>Debugging?</h4>
+										<h4>Debugging</h4>
 										<p>
-											(insert)
+											Coding, especially larger projects like this, often leads to errors before getting a working product. Finding whats wrong with each and every error and having to google ones we didn't understand was very tedious and slowed us down.
 										</p>
 										
 									</div>
@@ -289,25 +291,14 @@ Add team members info&pictures(upload to app/static/img, should be roughly 1:1 r
 								<div class="block">
 									<img src="img/blog/blog-4.jpg" alt="" class="img-responsive">
 									<div class="content">
-										<h4><a href="blog.html">Retraining the models</a></h4>
+										<h4>Retraining the models</h4>
 										<p>We had already created one model that generated solid reviews, but we were determined to extend our idea. We had to retrain two models to create the positive and negative reviews, so that process, similar to our first time training the model, was time-consuming and challenging.
 										</p>
 										
 									</div>
 								</div>
 							</div>
-							<div>
-								<div class="block">
-									<img src="img/blog/blog-1.jpg" alt="" class="img-responsive">
-									<div class="content">
-										<h4><a href="blog.html">(insert)</a></h4>
-										<p>
-											Lorem ipsum dolor sit amet, consectetur adipisicing elit. Accusamus ex itaque repudiandae nihil qui debitis atque necessitatibus aliquam, consequuntur autem!
-										</p>
-										<a href="blog.html" class="btn btn-read">Read More</a>
-										
-									</div>
-								</div>
+
 							</div>
 							
 						</div>		
@@ -328,15 +319,15 @@ Add team members info&pictures(upload to app/static/img, should be roughly 1:1 r
 						<div class="block wow fadeInLeft" data-wow-delay=".3s">
 							<img src="{{url_for('static',filename='img/Jonathan_Team_Portfolio.jpg')}}" style="aspect-ratio: 150/157"  alt="image of Jonathan">
 							<div class="team-overlay">
-								<h3>Jonathan Setiabudi<span>Product Manager/Back-End Developer</span></h3>
+								<h3>Jonathan Setiabudi <span>Product Manager/Back-End Developer</span></h3>
                 <hr>
-                <p>Hi, I'm am a upcoming senior at James Logan High School. I enjoy reading and playing video games as my hobbies. In this project I helped lead the team as product manager as well as write the code that makes the website work as a back end engineer. Currently president of the Environmental club and part of the Comp-Sci club </p>
-							</div>
+                <p>Hi, I'm am a upcoming senior at James Logan High School. I enjoy reading and playing video games as my hobbies. In this project I helped lead the team as product manager as well as write the code that makes the website work as a back end engineer. Currently president of the Environmental club and part of the Comp-Sci club. </p>
+							</div> 
 						</div>
 					</div>
           <div class="col-md-4 col-sm-4 col-xs-6">
 						<div class="block wow fadeInLeft" data-wow-delay=".3s">
-							<img src="{{url_for('static',filename='img/team-img1.jpg')}}" style="aspect-ratio: 150/157" alt="">
+							<img src="{{url_for('static',filename='img/Srishti_Team_Picture.jpg')}}" style="aspect-ratio: 150/157" alt="">
 							<div class="team-overlay">
 								<h3>Srishti Deb <span>Model Trainer/Front End Developer</span></h3>
                 <hr>
@@ -360,23 +351,23 @@ Add team members info&pictures(upload to app/static/img, should be roughly 1:1 r
 							<div class="team-overlay">
 								<h3>Ariel Gonzalez <span>Front-End Developer</span></h3>
                 <hr>
-								<p>I am an upcoming senior at Cimarron Memerial High School. I enjoy learning about astronomy, fashion, and water sources!</p>
+								<p>I am an upcoming senior at Cimarron Memorial High School. I enjoy learning about astronomy, fashion, and water sources!</p>
 							</div>
 						</div>
 					</div>
 					<div class="col-md-4  col-sm-4 col-xs-6">
 						<div class="block wow fadeInLeft" data-wow-delay=".6s">
-							<img src="{{url_for('static',filename='img/team-img2.jpg')}}" style="aspect-ratio: 150/157" alt="">
+							<img src="{{url_for('static',filename='img/anatulya_team_picture.jpg')}}" style="aspect-ratio: 150/157" alt="">
 							<div class="team-overlay">
-								<h3>Anatulya Nandi <span>Student</span></h3>
+								<h3>Anatulya Nandi <span>Back-End Developer</span></h3>
                 <hr>
-								<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis</p>
+								<p>An upcoming junior at Cupertino High School and I worked as the back-end engineer for this project.</p>
 							</div>
 						</div>
 					</div>
 					<div class="col-md-4  col-sm-4 col-xs-6">
 						<div class="block wow fadeInLeft" data-wow-delay=".9s">
-							<img src="{{url_for('static',filename='img/team-img3.jpg')}}" style="aspect-ratio: 150/157" alt="">
+							<img src="{{url_for('static',filename='img/siqi_team_picture.png')}}" style="aspect-ratio: 150/157" alt="">
 							<div class="team-overlay">
 								<h3>Siqi Fang <span>Instructor</span></h3>
                 <hr>
@@ -394,7 +385,7 @@ Add team members info&pictures(upload to app/static/img, should be roughly 1:1 r
 				<div class="row">
 					<div class="col-md-12">
 						<div class="block">
-							<a href="#"><img src="https://img.shields.io/badge/Github-Visit%20our%20repo-green?logo=github" alt=""></a>
+							<a href="https://github.com/Siqi-Fang/SC22-BatchA-The-Stars-Amazon-Review_Generator"><img src="https://img.shields.io/badge/Github-Visit%20our%20repo-green?logo=github" alt=""></a>
 							<p>All rights reserved © 2022</p>
 						</div>
 					</div>
