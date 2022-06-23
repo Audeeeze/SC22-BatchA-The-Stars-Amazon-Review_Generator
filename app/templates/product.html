@@ -1,0 +1,118 @@
+<!DOCTYPE html>
+	<html lang="en">
+	<head>
+		<meta charset="UTF-8">
+		<title>Amazon Review Generator - Results</title>
+		<meta name="viewport" content="width=device-width, initial-scale=1">
+
+
+		<!-- Css link -->
+		<link rel="stylesheet" href="http://code.ionicframework.com/ionicons/2.0.1/css/ionicons.min.css"/>
+		<link rel="stylesheet" href="{{url_for('static',filename='css/styles.css') }}"/>
+		<link rel="stylesheet" href="{{url_for('static',filename='css/owl.carousel.css') }}"/>
+		<link rel="stylesheet" href="{{url_for('static',filename='css/owl.transitions.css') }}"/>
+		<link rel="stylesheet" href="{{url_for('static',filename='css/animate.min.css') }}"/>
+		<link rel="stylesheet" href="{{url_for('static',filename='css/lightbox.css') }}"/>
+		<link rel="stylesheet" href="{{url_for('static',filename='css/bootstrap.min.css') }}"/>
+		<link rel="stylesheet" href="{{url_for('static',filename='css/preloader.css') }}"/>
+		<link rel="stylesheet" href="{{url_for('static',filename='css/image.css') }}"/>
+		<link rel="stylesheet" href="{{url_for('static',filename='css/icon.css') }}"/>
+		<link rel="stylesheet" href="{{url_for('static',filename='css/style.css') }}"/>
+		<link rel="stylesheet" href="{{url_for('static',filename='css/responsive.css') }}"/>
+
+	</head>
+	<body id="top">
+	
+
+<header id="navigation" class="navbar-fixed-top animated-header">
+    <div class="container">
+        <div class="navbar-header">
+            <!-- responsive nav button -->
+  <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse">
+    <span class="sr-only">Toggle navigation</span>
+    <span class="icon-bar"></span>
+    <span class="icon-bar"></span>
+    <span class="icon-bar"></span>
+            </button>
+  <!-- /responsive nav button -->
+
+  <!-- logo -->
+  <h1 class="navbar-brand">
+    <a href="https://www.ai-camp.org/" target="_blank"><img src="{{url_for('static', filename='img/ai_camp_logo.jpg')}}" height="60" width="60" alt=""></a>
+  </h1>
+      </div>
+
+<!-- main nav -->
+  <nav class="collapse navbar-collapse navbar-right" role="navigation">
+      <ul id="nav" class="nav navbar-nav menu">
+          <li><a href="{{url_for('home')}}">Home</a></li>
+      </ul>
+  </nav>
+<!-- /main nav -->
+
+    </div>
+</header>
+
+<br>
+<br>
+<br>
+<section id="contact-form" style="height:85vh">
+	<div class="container">
+
+  <div class="title">
+    <h2>Try our product</h2>
+  </div>
+
+          
+  <div class="container">
+  <form action="{{url_for('generate_text')}}" method="POST">
+      <div class="row">
+        <div class="col-sm-10">
+        <input name='prompt'type="text" class="form-control" placeholder="Enter Prompt Here..." style="height:max-content">
+        </div>
+        <div class="col-sm-2">
+        <button class="btn btn-default" type="submit" style="float:left">SUBMIT</button>
+        </div>
+      </div>
+
+      <br>
+
+      <textarea class="form-control" rows="3" placeholder="Result will show up here...">{{generated|safe}}</textarea>
+
+  </form>
+  </div>
+    
+  </div>
+</section>
+<br>
+    
+		<footer>
+			<div class="container">
+				<div class="row">
+					<div class="col-md-12">
+						<div class="block">
+              <a href="#"><img src="https://img.shields.io/badge/Github-Visit%20our%20repo-green?logo=github" alt=""></a>
+							<p>All rights reserved © 2022</p>
+						</div>
+					</div>
+				</div>
+			</div>
+		</footer>
+
+
+		<!-- load Js -->
+		<script src="{{ url_for('static',filename='js/jquery-1.11.3.min.js') }}"></script>
+		<script src="{{ url_for('static', filename='js/bootstrap.min.js') }}"></script>
+		<script src="{{ url_for('static', filename='js/waypoints.min.js') }}"></script>
+		<script src="{{ url_for('static',filename='js/lightbox.js') }}"></script>
+		<script src="{{ url_for('static',filename='js/jquery.counterup.min.js') }}"></script>
+		<script src="{{ url_for('static',filename='js/owl.carousel.min.js') }}"></script>
+		<script src="{{ url_for('static',filename='js/html5lightbox.js') }}"></script>
+		<script src="{{ url_for('static',filename='js/jquery.mixitup.js') }}"></script>
+		<script src="{{ url_for('static', filename='js/wow.min.js') }}"></script>
+		<script src="{{ url_for('static', filename='js/jquery.scrollUp.js') }}"></script>
+		<script src="{{ url_for('static', filename='js/jquery.sticky.js') }}"></script>
+		<script src="{{ url_for('static', filename='js/jquery.nav.js') }}"></script>
+		<script src="{{ url_for('static', filename='js/main.js') }}"></script>
+	</body>
+</html>

@@ -1,0 +1,421 @@
+<!DOCTYPE html>
+<!-- TODO:
+Add team members info&pictures(upload to app/static/img, should be roughly 1:1 ratio)
+-->
+	<html lang="en">
+	<head>
+		<meta charset="UTF-8">
+		<meta name="viewport" content="width=device-width, initial-scale=1">
+		<!-- google fonts -->
+
+		<!-- Css link -->
+		<link rel="stylesheet" href="http://code.ionicframework.com/ionicons/2.0.1/css/ionicons.min.css"/>
+		<link rel="stylesheet" href="{{url_for('static',filename='css/styles.css') }}"/>
+		<link rel="stylesheet" href="{{url_for('static',filename='css/owl.carousel.css') }}"/>
+		<link rel="stylesheet" href="{{url_for('static',filename='css/owl.transitions.css') }}"/>
+		<link rel="stylesheet" href="{{url_for('static',filename='css/animate.min.css') }}"/>
+		<link rel="stylesheet" href="{{url_for('static',filename='css/lightbox.css') }}"/>
+		<link rel="stylesheet" href="{{url_for('static',filename='css/bootstrap.min.css') }}"/>
+		<link rel="stylesheet" href="{{url_for('static',filename='css/preloader.css') }}"/>
+		<link rel="stylesheet" href="{{url_for('static',filename='css/image.css') }}"/>
+		<link rel="stylesheet" href="{{url_for('static',filename='css/icon.css') }}"/>
+		<link rel="stylesheet" href="{{url_for('static',filename='css/style.css') }}"/>
+		<link rel="stylesheet" href="{{url_for('static',filename='css/responsive.css') }}"/>
+
+	</head>
+	<body id="top">
+	
+
+<header id="navigation" class="navbar-fixed-top animated-header">
+            <div class="container">
+                <div class="navbar-header">
+                    <!-- responsive nav button -->
+					<button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse">
+						<span class="sr-only">Toggle navigation</span>
+						<span class="icon-bar"></span>
+						<span class="icon-bar"></span>
+						<span class="icon-bar"></span>
+                    </button>
+					<!-- /responsive nav button -->
+					
+					<!-- logo -->
+					<h1 class="navbar-brand">
+						<a href="https://www.ai-camp.org/" target="_blank"><img src="{{url_for('static', filename='img/ai_camp_logo.jpg')}}" height="60" width="60" alt=""></a>
+					</h1>
+					<!-- /logo -->
+                </div>
+
+				<!-- main nav -->
+                <nav class="collapse navbar-collapse navbar-right" role="navigation">
+                    <ul id="nav" class="nav navbar-nav menu">
+                        <li><a href="#top">Home</a></li>
+                        <li><a href="#features">Uses</a></li>
+                        <li><a href="#counter">Background</a></li>
+                        <li><a href="#testimonial">Our Process</a></li>
+                        <li><a href="#blog">Difficulties</a></li>
+                        <li><a href="#team">Our Team</a></li>
+                    </ul>
+                </nav>
+				<!-- /main nav -->
+				
+            </div>
+        </header>
+
+
+<!-- Banner:  Go to product Button  -->
+<div class="wrapper">
+		<section id="banner">
+			<div class="container">
+				<div class="row">
+					<div class="col-md-12">
+						<div class="block">
+							<h1 style="color:white">Amazon Review Generator</h1>
+							<h2>Try Our Product Now!
+							<div class="buttons">
+								<a href="{{url_for('home_post')}}" class="btn btn-learn">Let's Go!</a>
+							</div>
+						</div>
+					</div>
+				</div>
+			</div>
+		</section>
+<!-- Banner:  Go to product  -->
+      
+<!------ Uses Section ------->
+		<section id="features">
+			<div class="container">
+				<div class="row">
+					<div class="col-md-12">
+						<div class="title">
+							<h2 style="color:grey">POSSIBLE USES</h2>
+							<p></p>
+						</div>
+					</div>
+				</div>
+				<div class="row">
+					<div class="col-md-4 col-xs-6 col-sm-6">
+						<div class="feature-block text-center">
+							<div class="icon-box">
+								<i class="ion-easel"></i>
+							</div>
+							<h4 style="color:#6B6B6A" class="wow fadeInUp" data-wow-delay=".3s">Can't Think?
+</h4>
+							<p class="wow fadeInUp" data-wow-delay=".5s">Want to write a review but don’t know how to start it? Get examples from our model. </p>
+						</div>
+					</div>
+					<div class="col-md-4 col-xs-6 col-sm-6">
+						<div class="feature-block text-center">
+							<div class="icon-box">
+								<i class="ion-paintbucket"></i>
+							</div>
+							<h4 style="color:#6B6B6A" class="wow fadeInUp" data-wow-delay=".3s">Company Starts</h4>
+							<p class="wow fadeInUp" data-wow-delay=".5s">Companies can use it to write their own reviews for a starting product</p>
+						</div>
+					</div>
+					<div class="col-md-4 col-xs-6 col-sm-6">
+						<div class="feature-block text-center">
+							<div class="icon-box">
+								<i class="ion-paintbrush"></i>
+							</div>
+							<h4 style="color:#6B6B6A" class="wow fadeInUp" data-wow-delay=".3s">Hate a Company?
+</h4>
+							<p class="wow fadeInUp" data-wow-delay=".5s">Whether you’re an individual or a competing company, this generator can lower the rating of any product.</p>
+						</div>
+					</div>
+				</div>
+			</div>
+		</section>
+<br>
+      
+<!------ Uses Section ------->
+
+<!-------  BACKGROUND  ------->
+<br>
+		<section id="counter">
+			<div class="container">
+				<div class="row">
+					<div class="title">
+						<h2>BACKGROUND</h2>
+						<p>What did we use to make our review generator?</p>
+					</div>
+					<div class="col-md-4 col-sm-6 col-xs-6">
+						<div class="block wow fadeInRight" data-wow-delay=".3s">
+							<i class="ion-code"></i>
+							<p class="count-text">
+								<span class="counter-digit">Python3 </span>
+							</p>
+							<p>The version of Python that we learned and used in our weeks of AI Camp, as well as in our model itself. </p>
+						</div>
+					</div>
+					<div class="col-md-4 col-sm-6 col-xs-6">
+						<div class="block wow fadeInRight" data-wow-delay=".5s">
+							<i class="ion-compass"></i>
+							<p class="count-text">
+								<span class="counter-digit">GPT-2 Model</span>
+							</p>
+							<p>A neural network machine learning model developed by OpenAI pre-trained to understand the human language, that we used to create our model.</p>
+						</div>
+					</div>
+					<div class="col-md-4 col-sm-6 col-xs-6">
+						<div class="block wow fadeInRight" data-wow-delay=".7s">
+							<i class="ion-compose"></i>
+							<p class="count-text">
+								<span class="counter-digit">NLP</span>
+							</p>
+							<p>The ability to build and help an AI understand human language, in both the spoken and written forms</p>
+						</div>
+					</div>
+				</div>
+			</div>
+		</section>
+<br>
+      
+<!-------  BACKGROUND  ------->
+      
+
+      
+<!------  PROCESS  ------->
+<section id="testimonial"style="background-color:LightGray">
+			<div class="container">
+				<div class="row">
+					<div class="title">
+						<h2 style="color:white">Our Process</h2>
+					</div>
+					<div class="col col-md-6">
+						<div class="media wow fadeInLeft" data-wow-delay=".3s">
+						  <div class="media-left">
+						  </div>
+						  <div class="media-body">
+                <img src="https://media.istockphoto.com/vectors/people-taking-documents-from-shelves-vector-id1290482722?k=20&m=1290482722&s=612x612&w=0&h=pGiHRSarIqA-hRjNBDv8jQU328on1iz9RSujARvnsmE=" height="120" width="180" >
+                <br>
+                <br>
+						    <a href="#"><h4 style="color:white" class="media-heading">Step 1: Finding a Dataset and Preprocessing it</h4></a>
+						    <p>Our main dataset is the 2018 Electronics reviews from Kaggle. We preprocessed it by cleaning it (removing stop-words) and saved the cleaned version of the data. The data is about 9,000 reviews from ⤻Amazon in 2018. We also have supplementary reviews that we webscraped. </p>
+						  </div>
+            </div>
+					</div>
+					<div class="col col-md-6">
+						<div class="media wow fadeInRight" data-wow-delay=".3s">
+						  <div class="media-left">
+						  </div>
+						  <div class="media-body">
+                <img src="https://media.istockphoto.com/vectors/artificial-intelligence-of-modern-technology-brain-in-laptop-vector-id1190555610?k=20&m=1190555610&s=612x612&w=0&h=SqcSHZs25kgyVHVlh2toCO0WIsk734NSqFaBKLTzV1Y=" height="120" width="180" >
+                <br>
+                <br>
+						    <a href="#"><h4 style="color:white" class="media-heading">Step 2: Training the Model</h4></a>
+						    <p>After importing our cleaned dataset of reviews on amazon electronics, we adjusted it to work on our model and ran the training. We experimented with the hyperparameters by recording reviews and comparing which ones with the different parameters made the most sense. </p>
+						  </div>
+						</div>
+					</div>
+          <div class="col col-md-6">
+						<div class="media wow fadeInLeft" data-wow-delay=".3s">
+						  <div class="media-left">
+						  </div>
+						  <div class="media-body">
+                <img src="https://fireflies.ai/blog/content/images/size/w2000/2022/02/AdobeStock_316903567-1.jpeg" height="120" width="190" >
+                <br>
+                <br>
+						    <h4 style="color:white" class="media-heading">Step 3: Extending the Idea and Sentiment Analysis</h4>
+						    <p> Using our initial dataset, we ran sentiment analysis on the data and retrained the models to make our final product take in the prompt, and return two separate reviews: one positive and one negative.
+  </p>
+						  </div>
+            </div>
+					</div>
+         <div class="col col-md-6">
+						<div class="media wow fadeInLeft" data-wow-delay=".3s">
+						  <div class="media-left">
+						  </div>
+						  <div class="media-body">
+                <img src="https://www.kindpng.com/picc/m/124-1247514_web-development-clipart-free-website-creative-web-design.png" height="120" width="190" >
+                <br>
+                <br>
+						    <a href="#" ><h4 style="color:white" class="media-heading">Step 4: Making the Website</h4></a>
+						    <p>After everything was done, we had to work on showcasing it. We worked together on the website, the front end engineers working on the layout and content of what you actually see, and the backend engineers connecting everything together. </p>
+						  </div>
+            </div>
+					</div>
+			</div>
+  </section>
+<br>
+<!------  PROCESS  ------->
+ 
+<!------  DIFFICULTIES  ------>
+		<section id="blog" style="background-color:White">
+			<div class="container">
+				<div class="row">
+					<div class="col-md-12">
+						<div class="title">
+							<h2 style="color:grey">Difficulties</h2>
+							<p>Use your mouse to drag to the right to see more!</p>
+						</div>
+						<div id="blog-post" class="owl-carousel">
+							<div>
+								<div class="block">
+									<img src="img/blog/blog-1.jpg" alt="" class="img-responsive">
+									<div class="content">
+										<h4>Training the Model</h4>
+										<p>
+											At first, when we trained the model, we were getting outputs that made no sense. We had to be patient and experiment with the parameters to get results that made sense. Training the model also took a lot of time, so we had to be patient for that as well. 
+										</p>
+										
+									</div>
+								</div>
+							</div>
+							<div>
+								<div class="block">
+									<img src="img/blog/blog-2.jpg" alt="" class="img-responsive">
+									<div class="content">
+										<h4>Debugging?</h4>
+										<p>
+											(insert)
+										</p>
+										
+									</div>
+								</div>
+							</div>
+							<div>
+								<div class="block">
+									<img src="img/blog/blog-3.jpg" alt="" class="img-responsive">
+									<div class="content">
+										<h4>Sentiment Analysis</h4>
+										<p>
+											Running the sentiment analysis was crucial in creating our model's positive and negative reviews, but running it took a very long time. We had to patient and debug a lot of it to finally get it to work the way we wanted to.
+										</p>
+										
+									</div>
+								</div>
+							</div>
+							<div>
+								<div class="block">
+									<img src="img/blog/blog-4.jpg" alt="" class="img-responsive">
+									<div class="content">
+										<h4><a href="blog.html">Retraining the models</a></h4>
+										<p>We had already created one model that generated solid reviews, but we were determined to extend our idea. We had to retrain two models to create the positive and negative reviews, so that process, similar to our first time training the model, was time-consuming and challenging.
+										</p>
+										
+									</div>
+								</div>
+							</div>
+							<div>
+								<div class="block">
+									<img src="img/blog/blog-1.jpg" alt="" class="img-responsive">
+									<div class="content">
+										<h4><a href="blog.html">(insert)</a></h4>
+										<p>
+											Lorem ipsum dolor sit amet, consectetur adipisicing elit. Accusamus ex itaque repudiandae nihil qui debitis atque necessitatibus aliquam, consequuntur autem!
+										</p>
+										<a href="blog.html" class="btn btn-read">Read More</a>
+										
+									</div>
+								</div>
+							</div>
+							
+						</div>		
+					</div>
+				</div>
+			</div>
+		</section>
+<!------  DIFFICULTIES  ------>  
+  
+<!------  TEAM MEMBERS  ------>
+		<section id="team" style="background-color:Silver">
+			<div class="container">
+				<div class="row">
+					<div class="title">
+						<h2 style="color:white">OUR TEAM</h2>
+					</div>
+					<div class="col-md-4 col-sm-4 col-xs-6">
+						<div class="block wow fadeInLeft" data-wow-delay=".3s">
+							<img src="{{url_for('static',filename='img/Jonathan_Team_Portfolio.jpg')}}" style="aspect-ratio: 150/157"  alt="image of Jonathan">
+							<div class="team-overlay">
+								<h3>Jonathan Setiabudi<span>Product Manager/Back-End Developer</span></h3>
+                <hr>
+                <p>Hi, I'm am a upcoming senior at James Logan High School. I enjoy reading and playing video games as my hobbies. In this project I helped lead the team as product manager as well as write the code that makes the website work as a back end engineer. Currently president of the Environmental club and part of the Comp-Sci club </p>
+							</div>
+						</div>
+					</div>
+          <div class="col-md-4 col-sm-4 col-xs-6">
+						<div class="block wow fadeInLeft" data-wow-delay=".3s">
+							<img src="{{url_for('static',filename='img/team-img1.jpg')}}" style="aspect-ratio: 150/157" alt="">
+							<div class="team-overlay">
+								<h3>Srishti Deb <span>Model Trainer/Front End Developer</span></h3>
+                <hr>
+								<p>I am an upcoming Junior at Irvington High School. Outside of school, I like to read, sing and crochet. I am on my school's water polo and swim team. In this project, I spent most of my time training the model, and helping with front-end. </p>
+							</div>
+						</div>
+					</div>
+          <div class="col-md-4 col-sm-4 col-xs-6">
+						<div class="block wow fadeInLeft" data-wow-delay=".3s">
+							<img src="{{url_for('static',filename='img/Kai_Team_Picture.png')}}" style="aspect-ratio: 150/157"alt="">
+							<div class="team-overlay">
+								<h3>Kai Lorenc <span>Model Trainer/Front End Developer</span></h3>
+                <hr>
+								<p>I am an upcoming Junior at Maine East High School. I play tennis, track, and soccer. I like playing video games and spending time with my friends. In this project, I mostly worked on the front end but also helped a bit with creating the model.</p>
+							</div>
+						</div>
+					</div>
+          <div class="col-md-4 col-sm-4 col-xs-6">
+						<div class="block wow fadeInLeft" data-wow-delay=".3s">
+							<img src="{{url_for('static',filename='img/ariel_team_picture.jpg')}}" style="aspect-ratio: 150/157" alt="">
+							<div class="team-overlay">
+								<h3>Ariel Gonzalez <span>Front-End Developer</span></h3>
+                <hr>
+								<p>I am an upcoming senior at Cimarron Memerial High School. I enjoy learning about astronomy, fashion, and water sources!</p>
+							</div>
+						</div>
+					</div>
+					<div class="col-md-4  col-sm-4 col-xs-6">
+						<div class="block wow fadeInLeft" data-wow-delay=".6s">
+							<img src="{{url_for('static',filename='img/team-img2.jpg')}}" style="aspect-ratio: 150/157" alt="">
+							<div class="team-overlay">
+								<h3>Anatulya Nandi <span>Student</span></h3>
+                <hr>
+								<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis</p>
+							</div>
+						</div>
+					</div>
+					<div class="col-md-4  col-sm-4 col-xs-6">
+						<div class="block wow fadeInLeft" data-wow-delay=".9s">
+							<img src="{{url_for('static',filename='img/team-img3.jpg')}}" style="aspect-ratio: 150/157" alt="">
+							<div class="team-overlay">
+								<h3>Siqi Fang <span>Instructor</span></h3>
+                <hr>
+								<p>I work as a lead Data Science Intern @AI-Camp. Currently studying Math & Computer Science at Hamilton College.</p>
+							</div>
+						</div>
+					</div>
+				</div>
+			</div>
+		</section>
+<!------  TEAM MEMBERS  ------>
+
+		<footer>
+			<div class="container">
+				<div class="row">
+					<div class="col-md-12">
+						<div class="block">
+							<a href="#"><img src="https://img.shields.io/badge/Github-Visit%20our%20repo-green?logo=github" alt=""></a>
+							<p>All rights reserved © 2022</p>
+						</div>
+					</div>
+				</div>
+			</div>
+		</footer>
+	</div>
+
+		<!-- load Js -->
+		<script src="{{ url_for('static',filename='js/jquery-1.11.3.min.js') }}"></script>
+		<script src="{{ url_for('static', filename='js/bootstrap.min.js') }}"></script>
+		<script src="{{ url_for('static', filename='js/waypoints.min.js') }}"></script>
+		<script src="{{ url_for('static',filename='js/lightbox.js') }}"></script>
+		<script src="{{ url_for('static',filename='js/jquery.counterup.min.js') }}"></script>
+		<script src="{{ url_for('static',filename='js/owl.carousel.min.js') }}"></script>
+		<script src="{{ url_for('static',filename='js/html5lightbox.js') }}"></script>
+		<script src="{{ url_for('static',filename='js/jquery.mixitup.js') }}"></script>
+		<script src="{{ url_for('static', filename='js/wow.min.js') }}"></script>
+		<script src="{{ url_for('static', filename='js/jquery.scrollUp.js') }}"></script>
+		<script src="{{ url_for('static', filename='js/jquery.sticky.js') }}"></script>
+		<script src="{{ url_for('static', filename='js/jquery.nav.js') }}"></script>
+		<script src="{{ url_for('static', filename='js/main.js') }}"></script>
+	</body>
+</html>

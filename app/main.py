@@ -21,10 +21,8 @@ from utils import get_base_url
 from aitextgen import aitextgen
 
 # load up a model from memory. Note you may not need all of these options.
-# ai = aitextgen(model_folder="model/",
-#                tokenizer_file="model/aitextgen.tokenizer.json", to_gpu=False)
+ai = aitextgen(model_folder="model/", to_gpu=False) # don't need to load tokenizder b/c we didn't train one
 
-ai = aitextgen(model="distilgpt2", to_gpu=False)
 
 # setup the webserver
 # port may need to be changed if there are multiple flask servers running on same server
@@ -42,39 +40,39 @@ app.secret_key = os.urandom(64)
 
 # set up the routes and logic for the webserver
 
-
+# render the home page when user open our app
 @app.route(f'{base_url}')
 def home():
-    return render_template('writer_home.html', generated=None)
+    return render_template('home.html', generated=None)
 
-
-@app.route(f'{base_url}', methods=['POST'])
+# redirect user to our results page when user hit "try our model" in home page
+@app.route(f'{base_url}/results/', methods=['POST'])
 def home_post():
     return redirect(url_for('results'))
 
-
+# loads results page 
 @app.route(f'{base_url}/results/')
 def results():
     if 'data' in session:
         data = session['data']
-        return render_template('Write-your-story-with-AI.html', generated=data)
+        return render_template('product.html', generated=data)
     else:
-        return render_template('Write-your-story-with-AI.html', generated=None)
+        return render_template('product.html', generated=None)
 
-
+# where the text generation happens
 @app.route(f'{base_url}/generate_text/', methods=["POST"])
 def generate_text():
     """
     view function that will return json response for generated text. 
     """
 
-    prompt = request.form['prompt']
+    prompt = request.form['prompt'] # grabs result 
     if prompt is not None:
         generated = ai.generate(
             n=1,
             batch_size=3,
             prompt=str(prompt),
-            max_length=300,
+            max_length=340,
             temperature=0.9,
             return_as_list=True
         )
@@ -83,16 +81,15 @@ def generate_text():
     session['data'] = generated[0]
     return redirect(url_for('results'))
 
-# define additional routes here
-# for example:
-# @app.route(f'{base_url}/team_members')
-# def team_members():
-#     return render_template('team_members.html') # would need to actually make this page
-
+# prompt = request.form['prompt']
+# prompt_bold = '<h1>' + prompt +'</h1>' 
+# prompt_upper =  prompt.upper()
+# prompt_span = '<span style="color:red">' + prompt_upper + '</span>'
+# return render_template('product.html',red=prompt_span)
 
 if __name__ == '__main__':
     # IMPORTANT: change url to the site where you are editing this file.
-    website_url = 'coding.ai-camp.dev'
+    website_url = 'cocalc7.ai-camp.dev/'
 
     print(f'Try to open\n\n    https://{website_url}' + base_url + '\n\n')
     app.run(host='0.0.0.0', port=port, debug=True)

@@ -47,6 +47,8 @@
                     <div class="col-lg-5">
                         <h2 class="text-light">Test out our model here!</h2>
                         <p class="lead mb-5"><strong>Submit a prompt for LyricBot to work with below, and the results will appear on the right!</strong></p>
+                      
+                      
                         <form action="{{url_for('generate_text')}}" method="POST" source="custom" name="form-1" >
                           <div class="form-group">
                             <textarea class="form-control-lg" rows="4" cols="50" placeholder="Write your prompt here..." required="" id="text_gen_input" name="prompt"></textarea>
