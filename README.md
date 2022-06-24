@@ -1,5 +1,5 @@
 # Amazon Review Generator 
-
+The amazing team `@Kai Lorenc` `@Srishti Deb` `@Jonathan Setiabudi` `@Anatulya Nandi` `@Ariel Gonzalez` trained the GPT-2 model and designed the webapp using html/css & flask.
 ## Overview
 TODO: 
 1. short discription: who are the users, what problems are we trying to solve
