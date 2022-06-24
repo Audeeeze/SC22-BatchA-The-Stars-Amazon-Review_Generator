@@ -5,7 +5,8 @@ TODO:
 1. short discription: who are the users, what problems are we trying to solve
 2. what is the models/technology 
 ## App Preview 
-will do
+![home](https://github.com/Siqi-Fang/SC22-BatchA-The-Stars-Amazon-Review_Generator/blob/master/home.png)
+![result](https://github.com/Siqi-Fang/SC22-BatchA-The-Stars-Amazon-Review_Generator/blob/master/result.png)
 
 ## Dataset 
 TODO:
