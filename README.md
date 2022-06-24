@@ -16,4 +16,15 @@ TODO:
 4.what are some extension features
 
 ## How to run 
-will do
+1. On your terminal, navigate to a directory where you want this app to be stored. (recommended: create a virtual environmnet using [venv](https://docs.python.org/3/library/venv.html) or [conda](https://docs.conda.io/projects/conda/en/latest/user-guide/getting-started.html))
+
+2. `git clone` this repository and cd into `app/` directory.
+
+3. Download dependencies with `python3 -m pip install -r requirements.txt`. (if this command fail to download all the dependencies, use `pip3 install <packagename>` to download missing ones.)
+
+4. Move the model files into 'app/model' folder. See `model/drive_link.txt` for our trained model. (You should have 2 folders, `pos_model` and `neg_model`, inside `model/`)
+
+5. Change line 99 of `app/main.py`, the value of website_url to `'localhost'`.
+
+6. Run app with `python3 -m main`. You should see something like `http://127.0.0.1/12345`, open it in your browser.
+
